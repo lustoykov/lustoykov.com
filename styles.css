@@ -68,6 +68,20 @@ p strong {
     gap: 20px;
 }
 
+.hero-scroll-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-scroll-link:hover {
+    color: var(--text-primary);
+    transform: translateY(2px);
+}
+
 .header-socials {
     display: flex;
     gap: 20px;
