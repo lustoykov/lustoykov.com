@@ -70,15 +70,18 @@ p strong {
 
 .hero-scroll-link {
     display: inline-block;
-    margin-top: 1.5rem;
-    color: var(--text-secondary);
+    margin-top: 2rem;
+    color: var(--text-primary);
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s ease, transform 0.2s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
 }
 
 .hero-scroll-link:hover {
-    color: var(--text-primary);
+    border-bottom-color: var(--text-primary);
     transform: translateY(2px);
 }
 
