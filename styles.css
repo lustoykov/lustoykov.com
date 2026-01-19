@@ -133,6 +133,31 @@ p strong {
     max-width: 650px;
 }
 
+/* Backstory */
+.backstory {
+    margin-bottom: 60px;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.story-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    border-left: 3px solid var(--accent-green);
+    padding-left: 15px;
+}
+
+.story-item p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
 /* Engines */
 .engine {
     margin-bottom: 60px;
