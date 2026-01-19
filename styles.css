@@ -180,6 +180,77 @@ p strong {
     border-color: #555;
 }
 
+/* Roadmap Levels */
+.level {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.level.completed {
+    opacity: 0.8;
+    border-color: #333;
+}
+
+.level.active {
+    opacity: 1;
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.1);
+    position: relative;
+}
+
+.level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.level-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(234, 179, 8, 0.7);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(234, 179, 8, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
+    }
+}
+
+.hud-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--bg-color);
+    background: var(--accent-yellow);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
 .engine-header {
     display: flex;
     justify-content: space-between;
