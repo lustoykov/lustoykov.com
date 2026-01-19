@@ -107,7 +107,6 @@ p strong {
 .status-pill {
     display: inline-block;
     background: rgba(255, 255, 255, 0.05);
-    /* slightly more subtle */
     color: var(--text-secondary);
     font-size: 0.75rem;
     font-weight: 500;
@@ -116,7 +115,15 @@ p strong {
     border-radius: 100px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0;
-    /* Remove margin as it's handled by flex gap */
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.status-pill:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    transform: translateY(-1px);
 }
 
 .hero h1 {
