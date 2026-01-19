@@ -52,6 +52,28 @@ p strong {
     color: var(--text-primary);
 }
 
+.text-link {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    text-underline-offset: 4px;
+    transition: all 0.2s ease;
+}
+
+.text-link:hover {
+    text-decoration-color: var(--accent-green);
+    color: #fff;
+}
+
+.section-title-container {
+    margin-bottom: 30px;
+}
+
+.section-title-container h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
 /* Hero Section */
 .hero {
     padding: 80px 0 60px;
