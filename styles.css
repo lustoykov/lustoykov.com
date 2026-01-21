@@ -304,7 +304,7 @@ p strong {
 .engine-tag {
     font-size: 0.75rem;
     background: #000;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--accent-green);
     padding: 4px 10px;
     border-radius: 6px;
     color: var(--text-secondary);
