@@ -145,11 +145,11 @@ p strong {
     border-color: rgba(234, 179, 8, 0.5);
     color: var(--accent-yellow);
     box-shadow: 0 0 10px rgba(234, 179, 8, 0.1);
+    background: linear-gradient(90deg, rgba(234, 179, 8, 0.2) var(--progress, 0%), rgba(255, 255, 255, 0.05) var(--progress, 0%));
 }
 
 .status-pill:hover,
 .goal-pill:hover {
-    background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
     color: var(--text-primary);
     transform: translateY(-1px);
@@ -158,8 +158,8 @@ p strong {
 .goal-pill:hover {
     border-color: var(--accent-yellow);
     color: var(--accent-yellow);
-    background: rgba(234, 179, 8, 0.1);
     box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+    background: linear-gradient(90deg, rgba(234, 179, 8, 0.25) var(--progress, 0%), rgba(255, 255, 255, 0.1) var(--progress, 0%));
 }
 
 .hero h1 {
