@@ -760,13 +760,13 @@ footer {
 .dashboard-container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px 20px;
 }
 
 .dashboard-header {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .dashboard-header h1 {
@@ -780,7 +780,7 @@ footer {
 
 .back-link {
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 0.9rem;
     color: var(--text-secondary);
     transition: color 0.2s, transform 0.2s;
