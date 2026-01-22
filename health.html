@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D7M0C03R8L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-D7M0C03R8L');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lustoykov's Health Protocol: Optimizing the machine.">
+    <title>Health Protocol | lustoykov</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <!-- Trend Tooltip -->
+        <div id="trend-tooltip" class="trend-tooltip">
+            <canvas id="trendChart"></canvas>
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Roadmap</a>
+
+        <header class="dashboard-header">
+            <h1>Health Protocol</h1>
+
+        </header>
+
+        <section class="health-grid">
+            <!-- Goals & Diet Card -->
+            <div class="health-card">
+                <div class="card-header">
+                    <h3>Current Goals & Diet</h3>
+                    <span class="engine-tag">Protocol</span>
+                </div>
+                <div class="protocol-list">
+                    <div class="protocol-item">
+                        <span class="label">Primary Goals:</span>
+                        <ul>
+                            <li>Reduce Anti-TPO (Thyroid Health) from 17.7 to &lt; 5.61 IU/ml</li>
+                            <li>Increase Testosterone Levels from 21.55 nmol/l to 25+ nmol/l</li>
+                            <li>Increase HRV to 100+ ms</li>
+                            <li>Maintain Average Sleep Score 85+</li>
+                            <li>Target Resting Heart Rate ~46 bpm</li>
+                        </ul>
+                    </div>
+                    <div class="protocol-item">
+                        <span class="label">Dietary Protocol:</span>
+                        <ul class="diet-tags">
+                            <li>No Dairy</li>
+                            <li>No Eggs</li>
+                            <li>No Gluten</li>
+                            <li>No Sugar</li>
+                            <li>No Processed Food</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daily Metrics Chart -->
+            <div class="health-card chart-card">
+                <div class="card-header">
+                    <h3>Recovery Metrics</h3>
+                    <div class="metrics-legend">
+                        <span class="legend-item"><span class="dot green"></span>Sleep</span>
+                        <span class="legend-item"><span class="dot yellow"></span>HRV</span>
+                        <span class="legend-item"><span class="dot blue" style="background: #3b82f6;"></span>RHR</span>
+                    </div>
+                </div>
+                <div class="chart-controls">
+                    <button class="timeframe-btn active" data-timeframe="1W">1W</button>
+                    <button class="timeframe-btn" data-timeframe="1M">1M</button>
+                    <button class="timeframe-btn" data-timeframe="1Y">1Y</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="metricsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biomarker Log -->
+        <section class="biomarkers-container">
+            <div class="card-header">
+                <h3>Biomarker Log</h3>
+                <span class="status-text">Latest update: Jan 22, 2026</span>
+            </div>
+
+            <!-- Jan 2026 -->
+            <div class="biomarker-period">
+                <h4>January 22, 2026</h4>
+                <div class="table-wrapper">
+                    <table class="biomarker-table">
+                        <thead>
+                            <tr>
+                                <th>Marker</th>
+                                <th>Value</th>
+                                <th>Reference</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Biochemistry -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Biochemistry</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Albumin">Albumin (serum)</td>
+                                <td>45 g/l</td>
+                                <td>35 - 52</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Magnesium">Magnesium (Mg)</td>
+                                <td>0.91 mmol/l</td>
+                                <td>0.66 - 1.07</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Iron">Iron (Fe)</td>
+                                <td>24.6 umol/l</td>
+                                <td>11.6 - 31.3</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+
+                            <!-- Hormones -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Hormones</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="fT4">Free Thyroxine (fT4)</td>
+                                <td>0.95 ng/dl</td>
+                                <td>0.70 - 1.48</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="TSH">TSH</td>
+                                <td>1.22 uIU/ml</td>
+                                <td>0.35 - 4.94</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Anti-Tg">Anti-Tg IgG</td>
+                                <td>1.68 IU/ml</td>
+                                <td>&lt; 4.11</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="fT3">Free Triiodothyronine (fT3)</td>
+                                <td>2.82 pg/ml</td>
+                                <td>1.58 - 3.91</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Testosterone">Total Testosterone (CMIA)</td>
+                                <td>21.55 nmol/l</td>
+                                <td>8.76 - 27.85</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Anti-TPO">Anti-TPO IgG</td>
+                                <td>17.7 IU/ml</td>
+                                <td>&lt; 5.61</td>
+                                <td><span class="status-dot red" title="High"></span></td>
+                            </tr>
+
+                            <!-- Metabolites -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Metabolites</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Ferritin">Ferritin</td>
+                                <td>142.26 ng/ml</td>
+                                <td>21.81 - 274.66</td>
+                                <td><span class="status-dot green" title="Normal"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sep 2025 -->
+            <div class="biomarker-period">
+                <h4>September 18, 2025</h4>
+                <div class="table-wrapper">
+                    <table class="biomarker-table">
+                        <thead>
+                            <tr>
+                                <th>Marker</th>
+                                <th>Value</th>
+                                <th>Reference</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Hematology -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Hematology</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="ESR">ESR</td>
+                                <td>15 mm/h</td>
+                                <td>&lt; 15</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="WBC">WBC</td>
+                                <td>4.6 G/l</td>
+                                <td>3.9 - 10.2</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="NEU %">NEU %</td>
+                                <td>44 %</td>
+                                <td>42 - 77</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="NEU Abs">NEU Abs</td>
+                                <td>2 G/l</td>
+                                <td>1.5 - 7.7</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="EO %">EO %</td>
+                                <td>0.1 %</td>
+                                <td>0.5 - 5.5</td>
+                                <td><span class="status-dot red" title="Low"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="EO Abs">EO Abs</td>
+                                <td>0.00 G/l</td>
+                                <td>0.02 - 0.5</td>
+                                <td><span class="status-dot red" title="Low"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="LYM %">LYM %</td>
+                                <td>46 %</td>
+                                <td>20 - 44</td>
+                                <td><span class="status-dot red" title="High"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="LYM Abs">LYM Abs</td>
+                                <td>2.1 G/l</td>
+                                <td>1.1 - 4.5</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="MO %">MO %</td>
+                                <td>9.1 %</td>
+                                <td>2 - 9.5</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="MO Abs">MO Abs</td>
+                                <td>0.42 G/l</td>
+                                <td>0.10 - 0.90</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="BASO %">BASO %</td>
+                                <td>1.5 %</td>
+                                <td>0 - 1.75</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="BASO Abs">BASO Abs</td>
+                                <td>0.07 G/l</td>
+                                <td>0 - 0.20</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="RBC">RBC</td>
+                                <td>5.26 T/l</td>
+                                <td>4.30 - 5.75</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="HGB">HGB</td>
+                                <td>167 g/l</td>
+                                <td>135 - 172</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="HCT">HCT</td>
+                                <td>0.483 l/l</td>
+                                <td>0.395 - 0.505</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="MCV">MCV</td>
+                                <td>92 fl</td>
+                                <td>80 - 99</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="MCH">MCH</td>
+                                <td>31.7 pg</td>
+                                <td>27 - 33.5</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="MCHC">MCHC</td>
+                                <td>345 g/l</td>
+                                <td>315 - 360</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="RDW-CV">RDW-CV</td>
+                                <td>13 %</td>
+                                <td>11.5 - 15</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="PLT">PLT</td>
+                                <td>154 G/l</td>
+                                <td>150 - 370</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="MPV">MPV</td>
+                                <td>11 fl</td>
+                                <td>8.5 - 11.5</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="PDW">PDW</td>
+                                <td>14.4 fl</td>
+                                <td>9 - 17</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+
+                            <!-- Urine Analysis -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Urine Analysis</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="pH">pH</td>
+                                <td>7.0</td>
+                                <td>4.5 - 8.0</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Specific Gravity">Specific Gravity</td>
+                                <td>1.020</td>
+                                <td>1.005 - 1.030</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Protein">Protein</td>
+                                <td>Negative</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Glucose">Glucose</td>
+                                <td>Negative</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Ketone">Ketone</td>
+                                <td>Negative</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Bilirubin">Bilirubin</td>
+                                <td>Negative</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Blood">Blood</td>
+                                <td>Negative</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Leucocytes Strip">Leucocytes (Strip)</td>
+                                <td>Negative</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Nitrite">Nitrite</td>
+                                <td>Negative</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Urobilinogen">Urobilinogen</td>
+                                <td>Normal</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sediment Erythrocytes">Sediment: Erythrocytes</td>
+                                <td>&lt;3 /HPF</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sediment Leucocytes">Sediment: Leucocytes</td>
+                                <td>&lt;3 /HPF</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sediment Squamous Epith">Sediment: Squamous Epith.</td>
+                                <td>0-10 /HPF</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sediment Non-squamous Epith">Sediment: Non-squamous Epith.</td>
+                                <td>&lt;3 /HPF</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sediment Hyaline Casts">Sediment: Hyaline Casts</td>
+                                <td>&lt;1 /HPF</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sediment Granular Casts">Sediment: Granular Casts</td>
+                                <td>&lt;1 /HPF</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sediment Bacteria">Sediment: Bacteria</td>
+                                <td>&lt;3 /HPF</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sediment Yeasts">Sediment: Yeasts</td>
+                                <td>&lt;3 /HPF</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Calcium Oxalate Crystals">Calcium Oxalate Crystals</td>
+                                <td>Not detected</td>
+                                <td>-</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+
+                            <!-- Biochemistry -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Biochemistry</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Zinc (Zn)">Zinc (Zn)</td>
+                                <td>21.4 µmol/l</td>
+                                <td>12 - 24</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Creatinine">Creatinine</td>
+                                <td>114.5 µmol/l</td>
+                                <td>53 - 106.1</td>
+                                <td><span class="status-dot red" title="High"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Uric Acid">Uric Acid</td>
+                                <td>309.06 µmol/l</td>
+                                <td>220 - 458</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Urea">Urea</td>
+                                <td>6 mmol/l</td>
+                                <td>3.2 - 7.4</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Albumin">Albumin</td>
+                                <td>45 g/l</td>
+                                <td>35 - 50</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Total Bilirubin">Total Bilirubin</td>
+                                <td>22.8 µmol/l</td>
+                                <td>3.4 - 20.5</td>
+                                <td><span class="status-dot red" title="High"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Direct Bilirubin">Direct Bilirubin</td>
+                                <td>6.3 µmol/l</td>
+                                <td>0 - 8.6</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Total Protein">Total Protein</td>
+                                <td>70 g/l</td>
+                                <td>64 - 83</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="ASAT">ASAT</td>
+                                <td>30 U/l</td>
+                                <td>1 - 34</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="ALAT">ALAT</td>
+                                <td>25 U/l</td>
+                                <td>&lt; 45</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="GGT">GGT</td>
+                                <td>26 U/l</td>
+                                <td>&lt; 55</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Alkaline Phosphatase">Alkaline Phosphatase</td>
+                                <td>56 U/l</td>
+                                <td>50 - 116</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="LDH">LDH</td>
+                                <td>164 U/l</td>
+                                <td>125 - 220</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Potassium">Potassium (K)</td>
+                                <td>4.6 mmol/l</td>
+                                <td>3.5 - 5.6</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sodium">Sodium (Na)</td>
+                                <td>139 mmol/l</td>
+                                <td>136 - 145</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Chloride">Chloride (Cl)</td>
+                                <td>104 mmol/l</td>
+                                <td>98 - 107</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Calcium">Calcium (Ca)</td>
+                                <td>2.3 mmol/l</td>
+                                <td>2.10 - 2.55</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Magnesium">Magnesium (Mg)</td>
+                                <td>0.85 mmol/l</td>
+                                <td>0.66 - 1.07</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Iron">Iron (Fe)</td>
+                                <td>31.6 µmol/l</td>
+                                <td>11.6 - 31.3</td>
+                                <td><span class="status-dot red" title="High"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Cystatin C">Cystatin C</td>
+                                <td>0.68 mg/l</td>
+                                <td>0.31 - 0.79</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+
+                            <!-- Hormones -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Hormones</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Estradiol (E2)">Estradiol (E2)</td>
+                                <td>26 pg/ml</td>
+                                <td>11 - 44</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Progesterone">Progesterone</td>
+                                <td>0.2 ng/ml</td>
+                                <td>0.10 - 0.20</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="FSH">FSH</td>
+                                <td>4.41 mIU/ml</td>
+                                <td>0.95 - 11.95</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Testosterone">Total Testosterone</td>
+                                <td>20.61 nmol/l</td>
+                                <td>8.33 - 30.19</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Free Testosterone">Free Testosterone</td>
+                                <td>0.841 nmol/l</td>
+                                <td>0.300 - 1.040</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Total Prolactin">Total Prolactin</td>
+                                <td>16.95 ng/ml</td>
+                                <td>3.46 - 19.40</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="TSH">TSH</td>
+                                <td>1.21 µIU/ml</td>
+                                <td>0.35 - 4.94</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="fT3">fT3</td>
+                                <td>2.72 pg/ml</td>
+                                <td>1.58 - 3.91</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="fT4">fT4</td>
+                                <td>0.98 ng/dl</td>
+                                <td>0.70 - 1.48</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Anti-TPO">Anti-TPO Ab</td>
+                                <td>17.4 IU/ml</td>
+                                <td>&lt; 5.61</td>
+                                <td><span class="status-dot red" title="High"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Anti-Tg">Anti-Tg Ab</td>
+                                <td>1.78 IU/ml</td>
+                                <td>&lt; 4.11</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="SHBG">SHBG</td>
+                                <td>26.6 nmol/l</td>
+                                <td>17.10 - 77.60</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="FAI">Free Androgen Index (FAI)</td>
+                                <td>77.48 %</td>
+                                <td>24.5 - 113.3</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+
+                            <!-- Metabolites & Vitamins -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Metabolites & Vitamins</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Vitamin B12">Vitamin B12</td>
+                                <td>761 pg/ml</td>
+                                <td>187 - 883</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Vitamin B6">Vitamin B6</td>
+                                <td>31.5 µg/l</td>
+                                <td>8.6 - 27.2</td>
+                                <td><span class="status-dot red" title="High"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Vitamin D">Vitamin D (25-OH)</td>
+                                <td>63.6 ng/ml</td>
+                                <td>&gt;30</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Vitamin B1">Vitamin B1</td>
+                                <td>32.8 µg/l</td>
+                                <td>28 - 85</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Vitamin B2">Vitamin B2</td>
+                                <td>233.9 µg/l</td>
+                                <td>204.2 - 306.4</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+
+                            <!-- Microbiology / Virology -->
+                            <tr>
+                                <td colspan="4" class="table-section-header">Microbiology / Virology</td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Chlamydia IgG">Chlamydia trachomatis IgG</td>
+                                <td>0.42 (Ratio)</td>
+                                <td>&lt;0.8</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Chlamydia IgM">Chlamydia trachomatis IgM</td>
+                                <td>0.79 (Ratio)</td>
+                                <td>&lt;0.8</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Treponema Ab">Treponema pallidum Ab</td>
+                                <td>0.05 (S/CO)</td>
+                                <td>&lt;1.00</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Hep B Ag">Hepatitis B Surface Ag</td>
+                                <td>0.47 (S/CO)</td>
+                                <td>&lt;1.00</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="HIV">HIV Type 1 & 2 p24Ag+Ab</td>
+                                <td>0.05 (S/CO)</td>
+                                <td>&lt;1.00</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Dec 2023 -->
+            <div class="biomarker-period">
+                <h4>December 24, 2023</h4>
+                <div class="table-wrapper">
+                    <table class="biomarker-table">
+                        <thead>
+                            <tr>
+                                <th>Marker</th>
+                                <th>Value</th>
+                                <th>Reference</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Biochemistry -->
+                            <tr>
+                                <td data-marker="Albumin">Albumin</td>
+                                <td>42 g/l</td>
+                                <td>35 - 55</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Potassium">Potassium</td>
+                                <td>4.3 mmol/l</td>
+                                <td>3.5 - 5.6</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Sodium">Sodium</td>
+                                <td>140 mmol/l</td>
+                                <td>135 - 152</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Chloride">Chloride</td>
+                                <td>102 mmol/l</td>
+                                <td>98 - 107</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Calcium">Calcium</td>
+                                <td>2.34 mmol/l</td>
+                                <td>2.12 - 2.62</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Magnesium">Magnesium</td>
+                                <td>0.69 mmol/l</td>
+                                <td>0.65 - 1.03</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Iron">Iron</td>
+                                <td>28 umol/l</td>
+                                <td>10.0 - 28.0</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <!-- Hormones -->
+                            <tr>
+                                <td data-marker="Free Testosterone">Free Testosterone</td>
+                                <td>0.155 ng/ml</td>
+                                <td>0.09 - 0.30</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="Testosterone">Testosterone</td>
+                                <td>6.41 ng/ml</td>
+                                <td>2.40 - 8.70</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <tr>
+                                <td data-marker="SHBG">SHBG</td>
+                                <td>28.7 nmol/L</td>
+                                <td>13.5 - 71.40</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                            <!-- Metabolites -->
+                            <tr>
+                                <td data-marker="Vitamin D">Vitamin D 3</td>
+                                <td>46.9 ng/ml</td>
+                                <td>20 - 100</td>
+                                <td><span class="status-dot green"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <div class="footer-socials">
+                <a href="https://www.youtube.com/@lustoykov" target="_blank">YouTube</a>
+                <a href="https://instagram.com/lustoykov" target="_blank">Instagram</a>
+                <a href="https://x.com/lustoykov" target="_blank">X</a>
+            </div>
+            <p>&copy; 2026 lustoykov.</p>
+        </footer>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="health-charts.js"></script>
+</body>
+
+</html>

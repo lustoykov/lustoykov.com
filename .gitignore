@@ -1,0 +1,11 @@
+# System
+.DS_Store
+
+# Private Data
+private_data/
+*.pdf
+*.PDF
+*.png
+*.PNG
+*.jpg
+*.jpeg
