@@ -671,7 +671,7 @@ footer {
     font-size: 0.8rem;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     color: var(--text-secondary);
 }
 

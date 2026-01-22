@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    labels: { color: '#a1a1a1', font: { family: 'Inter, sans-serif' }, usePointStyle: true, boxWidth: 8 }
+                    display: false // We use custom HTML legend
                 },
                 tooltip: {
                     backgroundColor: '#141414',
