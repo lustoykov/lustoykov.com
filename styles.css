@@ -162,6 +162,19 @@ p strong {
     background: linear-gradient(90deg, rgba(234, 179, 8, 0.25) var(--progress, 0%), rgba(255, 255, 255, 0.1) var(--progress, 0%));
 }
 
+.stream-pill {
+    border-color: rgba(255, 0, 0, 0.6);
+    color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+}
+
+.stream-pill:hover {
+    border-color: #ff0000;
+    color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    background: rgba(255, 0, 0, 0.1);
+}
+
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
