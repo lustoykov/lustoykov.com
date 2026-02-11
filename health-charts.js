@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('metricsChart').getContext('2d');
 
     // Data Configuration
-    // --- Source of Truth Data (Jan 16 - Jan 22, 2026) ---
+    // --- Source of Truth Data (Jan 16 - Feb 11, 2026) ---
     // In a real app, this would come from an API/Database
     const rawHistory = [
         { date: '2026-01-16', sleep: 64, hrv: 70, rhr: 53 },
@@ -30,10 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
         { date: '2026-02-06', sleep: 83, hrv: 66, rhr: 46 },
         { date: '2026-02-07', sleep: 88, hrv: 72, rhr: 47 },
         { date: '2026-02-08', sleep: 59, hrv: 62, rhr: 48 },
-        { date: '2026-02-09', sleep: 84, hrv: 70, rhr: 48 }
+        { date: '2026-02-09', sleep: 81, hrv: 73, rhr: 51 },
+        { date: '2026-02-10', sleep: 84, hrv: 70, rhr: 48 },
+        { date: '2026-02-11', sleep: 85, hrv: 68, rhr: 51 }
     ];
 
-    const today = new Date('2026-02-10T12:00:00'); // Fixed "Today" for demo consistency
+    const today = new Date('2026-02-11T12:00:00'); // Fixed "Today" for demo consistency
 
     // helper to format dates
     const formatDateKey = (date) => date.toISOString().split('T')[0];
