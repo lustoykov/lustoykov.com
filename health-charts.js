@@ -37,10 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
         { date: '2026-02-13', sleep: 71, hrv: 69, rhr: 49 },
         { date: '2026-02-14', sleep: 76, hrv: 63, rhr: 50 },
         { date: '2026-02-15', sleep: 80, hrv: 70, rhr: 45 },
-        { date: '2026-02-16', sleep: 67, hrv: 74, rhr: 46 }
+        { date: '2026-02-16', sleep: 67, hrv: 74, rhr: 46 },
+        { date: '2026-02-18', sleep: 77, hrv: 65, rhr: 47 }
     ];
 
-    const today = new Date('2026-02-16T12:00:00'); // Fixed "Today" for demo consistency
+    const today = new Date('2026-02-18T12:00:00'); // Fixed "Today" for demo consistency
 
     // helper to format dates
     const formatDateKey = (date) => date.toISOString().split('T')[0];
