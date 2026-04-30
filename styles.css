@@ -286,7 +286,6 @@ p strong {
 
 /* Principle Section */
 .principle-section h3,
-.outputs-section h3,
 .channels-section h3 {
     font-size: 1rem;
     text-transform: uppercase;
@@ -333,65 +332,6 @@ p strong {
     font-size: 0.9rem;
     color: var(--text-secondary);
     font-style: italic;
-}
-
-/* Outputs Grid */
-.outputs-intro {
-    margin-bottom: 20px;
-}
-
-.outputs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 10px;
-}
-
-.output-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    transition: border-color 0.2s ease;
-}
-
-.output-card:hover {
-    border-color: #555;
-}
-
-.output-card h4 {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-    font-weight: 700;
-}
-
-.output-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 12px 0;
-}
-
-.output-card ul li {
-    position: relative;
-    padding-left: 16px;
-    margin-bottom: 6px;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.output-card ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--accent-green);
-}
-
-.output-footnote {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: var(--text-secondary);
-    margin-bottom: 0;
 }
 
 /* Channels */
@@ -643,10 +583,6 @@ footer {
         font-size: 1.4rem;
     }
 
-    .outputs-grid {
-        grid-template-columns: 1fr;
-    }
-
     .channel {
         flex-direction: column;
         gap: 12px;
@@ -659,6 +595,12 @@ footer {
 
     .footer-socials {
         gap: 15px;
+    }
+}
+
+@media (max-width: 760px) {
+    .story-grid {
+        grid-template-columns: 1fr;
     }
 }
 
