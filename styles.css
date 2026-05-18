@@ -58,11 +58,6 @@ p strong {
     padding-bottom: 96px;
 }
 
-.mission-section {
-    margin-bottom: 56px;
-}
-
-.mission-section h1,
 .background-section h2 {
     font-size: 0.85rem;
     font-weight: 600;
@@ -72,18 +67,11 @@ p strong {
     margin-bottom: 14px;
 }
 
-.mission-copy {
-    max-width: 760px;
-    font-size: 1.6rem;
-    line-height: 1.35;
-    color: var(--text-primary);
-    margin-bottom: 24px;
-}
-
 .social-links {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
+    margin-bottom: 56px;
 }
 
 .background-section p {
@@ -297,8 +285,8 @@ footer {
         padding-bottom: 72px;
     }
 
-    .mission-copy {
-        font-size: 1.3rem;
+    .social-links {
+        margin-bottom: 48px;
     }
 }
 
