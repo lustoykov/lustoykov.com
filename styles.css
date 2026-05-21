@@ -78,6 +78,10 @@ p strong {
     max-width: 720px;
     font-size: 1rem;
     line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.background-section p:last-child {
     margin-bottom: 0;
 }
 
