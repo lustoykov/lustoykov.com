@@ -13,31 +13,157 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lyubomir Stoykov's background, YouTube, and X links.">
-    <title>lustoykov</title>
+    <meta name="description" content="Lyubomir Stoykov — Software Engineer. Previously Staff Engineer at Yelp. Now independent, building AI products.">
+    <title>Lyubomir Stoykov — Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <main class="container simple-page">
+    <main class="container">
 
-        <div class="social-links" aria-label="Social links">
-            <a href="https://www.youtube.com/@lustoykov" class="link-btn" target="_blank">YouTube -></a>
-            <a href="https://x.com/lustoykov" class="link-btn" target="_blank">X -></a>
-        </div>
-
-        <section class="background-section" aria-labelledby="background-heading">
-            <h2 id="background-heading">About me</h2>
-            <p><strong>Hi, I'm Lyubomir 👋</strong></p>
-            <p>A bit about me:</p>
-            <p>I grew up in a small town in Bulgaria, left home at 14 for a math high school, and moved to Germany at 19. After studying CS at <strong>TU Munich</strong> and spending six years there, I joined Yelp in Hamburg, eventually growing from Senior to <strong>Staff Software Engineer</strong>.</p>
-            <p>I left my <strong>$200K/year Staff Engineer job</strong> to focus on independently building software to $10,000,000, documenting the journey, and figuring out how to make videos I'd genuinely enjoy watching myself.</p>
-            <p>For now, I'm back home in Bulgaria so I can work on my goals, but I do see myself in Munich eventually.</p>
+        <!-- ============================ HERO ============================ -->
+        <section class="hero" aria-labelledby="hero-name">
+            <div class="avatar" aria-hidden="true">
+                <span class="avatar-initials">LS</span>
+                <img src="profile.jpg" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="hero-text">
+                <h1 id="hero-name">Lyubomir Stoykov</h1>
+                <p class="hero-title">Software Engineer</p>
+                <p class="hero-sub">Previously Staff Engineer at <strong>Yelp</strong>. Now independent - building with AI and sharing the knowledge.</p>
+                <div class="social-links" aria-label="Social links">
+                    <a href="https://www.youtube.com/@lustoykov" class="link-btn" target="_blank" rel="noopener">YouTube &rarr;</a>
+                    <a href="https://x.com/lustoykov" class="link-btn" target="_blank" rel="noopener">X &rarr;</a>
+                    <a href="https://github.com/lustoykov" class="link-btn" target="_blank" rel="noopener">GitHub &rarr;</a>
+                    <a href="mailto:lustoykov.ai@gmail.com" class="link-btn">Email &rarr;</a>
+                </div>
+            </div>
         </section>
+
+        <!-- ============================ PILLARS ============================ -->
+        <section class="pillars" aria-labelledby="pillars-label">
+            <h2 id="pillars-label" class="section-label">What I'm working on</h2>
+            <div class="pillar-grid">
+                <article class="pillar">
+                    <p class="pillar-num">01</p>
+                    <h3>Build</h3>
+                    <p>Products in the works.</p>
+                </article>
+                <article class="pillar">
+                    <p class="pillar-num">02</p>
+                    <h3>Share</h3>
+                    <p>Long&#8209;form on YouTube. Notes on X.</p>
+                </article>
+                <article class="pillar">
+                    <p class="pillar-num">03</p>
+                    <h3>Consult</h3>
+                    <p>Selective work with teams adopting AI, or for interesting engineering problems. <a href="mailto:lustoykov.ai@gmail.com" class="inline-link">Get in touch &rarr;</a></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================ PRODUCTS ============================ -->
+        <section class="products" aria-labelledby="products-label">
+            <h2 id="products-label" class="section-label">Products</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-card-top">
+                        <span class="product-num">PRODUCT 01</span>
+                        <span class="status-marker"><span class="status-marker-dot"></span>Coming soon</span>
+                    </div>
+                    <p class="product-name">TBA</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-card-top">
+                        <span class="product-num">PRODUCT 02</span>
+                        <span class="status-marker"><span class="status-marker-dot"></span>Coming soon</span>
+                    </div>
+                    <p class="product-name">TBA</p>
+                </article>
+                <article class="product-card">
+                    <div class="product-card-top">
+                        <span class="product-num">PRODUCT 03</span>
+                        <span class="status-marker"><span class="status-marker-dot"></span>Coming soon</span>
+                    </div>
+                    <p class="product-name">TBA</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================ ABOUT ME ============================ -->
+        <section class="background" aria-labelledby="about-label">
+            <h2 id="about-label" class="section-label">About me</h2>
+            <p class="background-prose">I grew up in Bulgaria, left home at 14 for a math high school, and moved to Germany at 19. I studied Computer Science at <strong>TU Munich</strong> and graduated with M.Sc (Distinction). After that I joined <strong>Yelp</strong> in Hamburg and worked on Ads for six years, going from Software Engineer to Staff Software Engineer. I took a sabbatical in mid&#8209;2025, moved back to Bulgaria, and started working independently in 2026.</p>
+
+            <details class="timeline-details">
+                <summary class="timeline-toggle">Full timeline</summary>
+                <ol class="timeline">
+                    <li class="timeline-item">
+                        <span class="timeline-when">2026 &rarr;</span>
+                        <div class="timeline-what">
+                            <p class="timeline-role">Independent</p>
+                            <p class="timeline-org">Building products, content, and selective consulting</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-when">2025 &ndash; 2026</span>
+                        <div class="timeline-what">
+                            <p class="timeline-role">Sabbatical</p>
+                            <p class="timeline-org">Moved back to Bulgaria</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-when">2024 &ndash; 2025</span>
+                        <div class="timeline-what">
+                            <p class="timeline-role">Staff Software Engineer</p>
+                            <p class="timeline-org">Yelp &middot; Ads &middot; Hamburg</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-when">2021 &ndash; 2024</span>
+                        <div class="timeline-what">
+                            <p class="timeline-role">Senior Software Engineer</p>
+                            <p class="timeline-org">Yelp &middot; Ads &middot; Hamburg</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-when">2019 &ndash; 2021</span>
+                        <div class="timeline-what">
+                            <p class="timeline-role">Software Engineer</p>
+                            <p class="timeline-org">Yelp &middot; Ads &middot; Hamburg</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-when">2018 &ndash; 2019</span>
+                        <div class="timeline-what">
+                            <p class="timeline-role">Software Engineer</p>
+                            <p class="timeline-org">UnternehmerTUM &middot; Digital Product School</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-when">2012 &ndash; 2018</span>
+                        <div class="timeline-what">
+                            <p class="timeline-role">BSc &amp; MSc, Computer Science <span class="timeline-aside">(Distinction)</span></p>
+                            <p class="timeline-org">TU Munich &middot; Thesis presented at the <a href="https://www.researchgate.net/publication/321459127_VIBES_fast_blockchain_simulations_for_large-scale_peer-to-peer_networks_demo" target="_blank" rel="noopener" class="inline-link">Middleware Conference</a>, Las Vegas</p>
+                        </div>
+                    </li>
+                </ol>
+            </details>
+        </section>
+
+        <!-- ============================ FOOTER ============================ -->
+        <footer class="site-footer">
+            <div class="footer-socials">
+                <a href="https://www.youtube.com/@lustoykov" target="_blank" rel="noopener">YouTube</a>
+                <a href="https://x.com/lustoykov" target="_blank" rel="noopener">X</a>
+                <a href="https://github.com/lustoykov" target="_blank" rel="noopener">GitHub</a>
+                <a href="mailto:lustoykov.ai@gmail.com">Email</a>
+            </div>
+        </footer>
 
     </main>
 
