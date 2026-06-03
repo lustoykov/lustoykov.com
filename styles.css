@@ -1293,7 +1293,7 @@ footer {
     height: auto;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    background: #0f0f0f;
+    background: #fbfaf7;
 }
 
 .article-figure figcaption {

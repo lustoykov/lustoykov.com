@@ -6,6 +6,8 @@
     and data offsets. The raw tensor bytes follow as one contiguous data block.
   </desc>
 
+  <rect x="0" y="7" width="680" height="586" fill="#fbfaf7"/>
+
   <defs>
     <style>
       .label {

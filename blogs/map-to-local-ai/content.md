@@ -2,6 +2,8 @@
 
 *A beginner's map to Hugging Face, Transformers, PyTorch, GGUF, safetensors, Ollama, LM Studio, Unsloth, MLX, vLLM, SGLang - and the rest of the vocabulary.*
 
+![](header-01.png)
+
 I used to think local AI was mostly a hobby for rich people.
 
 For the better part of last year, I kept seeing people tinker with local models. There was a level of obsession to it: spending $10-20K on GPUs, building clusters and running AI locally just to get performance that is worse than something you could get from OpenAI or Anthropic for $100/month.
@@ -44,7 +46,7 @@ A big source of confusion is that the confusing terms live at **different layers
 
 Saying "I’m running Qwen locally" doesn't paint the full picture. To know what that actually means, we need to specify: which Qwen, which weights, which tokenizer and chat template, which file format, which quantization, which runtime, which app, and which hardware. Here are three different ways to run Qwen - on a MacBook, Consumer Nvidia (RTX, DGX...), Production (H100, H200, B200...)
 
-![Three local AI paths through model, artifact, runtime, app, and hardware layers](v2_three_paths.svg)
+![Three local AI paths through model, artifact, runtime, app, and hardware layers](v2_three_paths.svg?v=contrast)
 
 ## The Lifecycle of AI
 
@@ -206,7 +208,7 @@ This file contains no learned weights. It tells the runtime what structure to bu
 
 The three header fields work together as a lookup. To load `q_proj`, a library reads the header, finds that entry, sees `dtype: BF16` and `shape: [576, 576]` (so it knows to build a 576×576 bfloat16 matrix), and reads its `data_offsets` - the start and end byte positions in the data block. It slices exactly those bytes and reshapes them into the matrix. The dtype says *how to interpret* each group of bytes, the shape says *how to fold the flat bytes into a grid*, and the offsets say *where to cut*.
 
-![safetensors file layout with header length, JSON tensor metadata, and raw tensor bytes](v5_safetensors_layout.svg)
+![safetensors file layout with header length, JSON tensor metadata, and raw tensor bytes](v5_safetensors_layout.svg?v=contrast)
 
 From the demo, a few of those entries:
 
@@ -274,7 +276,7 @@ Q4_K_M GGUF            101 MB (4-bit Quantization)
 
 This conversion step ([which can be done by a small Python script](https://github.com/ggml-org/llama.cpp/blob/master/convert_hf_to_gguf.py)) *repackages* safetensors to GGUF so llama.cpp can load it (the size drop comes from the quantization step, not the conversion). 
 
-![Which runtimes can load safetensors directly and which need GGUF first](v7_safetensors_direct_vs_gguf.svg)
+![Which runtimes can load safetensors directly and which need GGUF first](v7_safetensors_direct_vs_gguf.svg?v=contrast)
 
 ### Quantization: Why Q4_K_M Exists
 
@@ -299,7 +301,7 @@ That is *before* KV cache, runtime overhead, and other buffers. Quantization shr
  2-bit → very aggressive
 ```
 
-![Quantization ladder showing how lower bit widths reduce model size](v8_quantization_ladder.svg)
+![Quantization ladder showing how lower bit widths reduce model size](v8_quantization_ladder.svg?v=contrast)
 
 Under the hood, quantization takes numbers like 0.4271983 and stores them less precisely, say 0.43. That's why a 4-bit model is so much smaller. You trade memory for some loss of precision.
 
@@ -314,7 +316,7 @@ The quant *names* you see on Hugging Face are confusing because they don't all r
 | `GPTQ` | post-training weight quantization | GPU inference - vLLM / SGLang / Transformers |
 | `FP8` | 8-bit floating-point precision | fast GPU serving (Hopper/Blackwell) |
 
-![Decoder for common quantization names including Q4_K_M, UD-Q4_K_XL, bnb-4bit, AWQ, GPTQ, and FP8](v9_quant_name_decoder.svg)
+![Decoder for common quantization names including Q4_K_M, UD-Q4_K_XL, bnb-4bit, AWQ, GPTQ, and FP8](v9_quant_name_decoder.svg?v=contrast)
 
 ### Small detour
 
