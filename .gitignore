@@ -3,6 +3,7 @@
 
 # Private Data
 private_data/
+exports/
 *.pdf
 *.PDF
 *.png
