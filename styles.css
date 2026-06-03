@@ -223,6 +223,75 @@ p strong {
 }
 
 /* ============================
+   WRITING
+   ============================ */
+.writing {
+    padding: 56px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.writing-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.writing-header .section-label {
+    margin-bottom: 0;
+}
+
+.writing-all-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color-strong);
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.writing-all-link:hover {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+.writing-card {
+    display: block;
+    padding: 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.writing-card:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--border-color-strong);
+    transform: translateY(-1px);
+}
+
+.writing-kicker,
+.writing-card-link {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-green);
+}
+
+.writing-card h3 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin: 12px 0 10px;
+}
+
+.writing-card p {
+    max-width: 660px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
+}
+
+/* ============================
    PRODUCTS
    ============================ */
 .products {
@@ -477,9 +546,16 @@ p strong {
     }
 
     .pillars,
+    .writing,
     .products,
     .background {
         padding: 44px 0;
+    }
+
+    .writing-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .pillar-grid,
@@ -994,4 +1070,356 @@ footer {
     font-size: 0.9rem;
     font-style: italic;
     color: var(--text-secondary);
+}
+
+/* ============================
+   BLOGS
+   ============================ */
+.blog-container {
+    width: min(100% - 40px, 900px);
+    margin: 0 auto;
+    padding: 36px 0 104px;
+}
+
+.blog-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-index-hero {
+    padding: 64px 0 40px;
+}
+
+.blog-index-hero h1 {
+    font-size: clamp(2.1rem, 6vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+}
+
+.blog-index-hero p {
+    max-width: 680px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.blog-list {
+    display: grid;
+    gap: 16px;
+    padding-top: 12px;
+}
+
+.blog-card {
+    display: block;
+    padding: 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.blog-card:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--border-color-strong);
+    transform: translateY(-1px);
+}
+
+.blog-card-kicker,
+.blog-card-link {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-green);
+}
+
+.blog-card h2 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin: 12px 0 10px;
+}
+
+.blog-card p {
+    max-width: 720px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
+}
+
+.markdown-body {
+    padding-top: 0;
+}
+
+.article-header {
+    padding: 58px 0 48px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 42px;
+}
+
+.article-kicker,
+.article-meta {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.article-kicker {
+    color: var(--accent-green);
+    margin-bottom: 18px;
+}
+
+.article-meta {
+    color: var(--text-muted);
+    margin-top: 18px;
+}
+
+.markdown-body h1 {
+    max-width: 800px;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+
+.article-deck {
+    max-width: 760px;
+    font-size: clamp(1.05rem, 2vw, 1.22rem) !important;
+    line-height: 1.65 !important;
+    color: var(--text-primary) !important;
+    margin: 0 !important;
+}
+
+.article-deck em {
+    color: inherit;
+}
+
+.markdown-body h2 {
+    font-size: 1.65rem;
+    line-height: 1.2;
+    margin: 68px 0 18px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.markdown-body h3 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+    margin: 42px 0 12px;
+}
+
+.markdown-body h4 {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 32px 0 10px;
+}
+
+.markdown-body p,
+.markdown-body li {
+    font-size: 1rem;
+    line-height: 1.82;
+    color: var(--text-secondary);
+}
+
+.markdown-body p {
+    margin: 0 0 22px;
+}
+
+.markdown-body strong {
+    color: var(--text-primary);
+    font-weight: 650;
+}
+
+.markdown-body em {
+    color: var(--text-primary);
+}
+
+.markdown-body a {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color-strong);
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.markdown-body a:hover {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+.heading-anchor {
+    opacity: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75em;
+    color: var(--text-muted);
+    border-bottom: 0 !important;
+}
+
+.markdown-body h2:hover .heading-anchor,
+.markdown-body h3:hover .heading-anchor,
+.markdown-body h4:hover .heading-anchor {
+    opacity: 1;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    margin: 0 0 26px 1.4rem;
+}
+
+.markdown-body li + li {
+    margin-top: 8px;
+}
+
+.markdown-body blockquote {
+    margin: 32px 0;
+    padding: 18px 22px;
+    border-left: 3px solid var(--accent-green);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0 8px 8px 0;
+}
+
+.markdown-body blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.article-figure {
+    margin: 34px 0;
+}
+
+.markdown-body img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #0f0f0f;
+}
+
+.article-figure figcaption {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.markdown-body code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+}
+
+.markdown-body :not(pre) > code {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 0.12em 0.35em;
+}
+
+.markdown-body pre {
+    margin: 28px 0;
+    padding: 18px 20px;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #101010 !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.markdown-body pre code {
+    line-height: 1.65;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 30px 0 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+    font-size: 0.88rem;
+}
+
+.markdown-body th,
+.markdown-body td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: top;
+}
+
+.markdown-body th {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.045);
+    font-weight: 650;
+}
+
+.markdown-body td {
+    color: var(--text-secondary);
+}
+
+.markdown-body tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.012);
+}
+
+.markdown-body tr:last-child td {
+    border-bottom: 0;
+}
+
+.markdown-loading,
+.markdown-error {
+    padding: 32px 0;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+}
+
+@media (max-width: 720px) {
+    .blog-container {
+        width: min(100% - 32px, 900px);
+        padding-top: 28px;
+    }
+
+    .blog-nav {
+        padding-bottom: 20px;
+    }
+
+    .blog-index-hero {
+        padding: 44px 0 28px;
+    }
+
+    .article-header {
+        padding: 42px 0 36px;
+        margin-bottom: 34px;
+    }
+
+    .markdown-body h2 {
+        margin-top: 48px;
+        padding-top: 16px;
+    }
+
+    .markdown-body p,
+    .markdown-body li {
+        font-size: 0.98rem;
+        line-height: 1.78;
+    }
+
+    .markdown-body blockquote,
+    .article-figure,
+    .table-wrap,
+    .markdown-body pre {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+        padding: 12px 13px;
+    }
 }

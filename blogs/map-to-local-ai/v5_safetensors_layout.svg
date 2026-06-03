@@ -1,0 +1,112 @@
+<svg width="100%" viewBox="0 7 680 586" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>How a safetensors file is laid out and read</title>
+  <desc>
+    A safetensors file starts with an 8-byte little-endian integer containing
+    the JSON header length. The JSON header maps tensor names to dtype, shape,
+    and data offsets. The raw tensor bytes follow as one contiguous data block.
+  </desc>
+
+  <defs>
+    <style>
+      .label {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        fill: #141413;
+      }
+      .muted {
+        fill: #5f5e5a;
+      }
+      .code-purple {
+        fill: #534ab7;
+      }
+      .code-green {
+        fill: #0f6e56;
+      }
+      .box-neutral {
+        fill: #f1efe8;
+        stroke: #5f5e5a;
+      }
+      .box-purple {
+        fill: #eeedfe;
+        stroke: #534ab7;
+      }
+      .box-green {
+        fill: #e1f5ee;
+        stroke: #0f6e56;
+      }
+      .box-note {
+        fill: #fff8e6;
+        stroke: #9a6a00;
+      }
+      .small {
+        font-size: 12px;
+      }
+      .body {
+        font-size: 14px;
+      }
+      .title {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .mono {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M2 1 L8 5 L2 9" fill="none" stroke="#5f5e5a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="16" width="640" height="568" rx="14" fill="#fbfaf7" stroke="#dedbd2"/>
+
+  <text x="40" y="42" class="label title">model.safetensors - read top to bottom</text>
+  <text x="40" y="64" class="label muted small">The file is binary, but the first two parts tell the loader how to interpret the raw tensor bytes.</text>
+
+  <g>
+    <rect x="40" y="84" width="600" height="58" rx="8" class="box-neutral" stroke-width="1"/>
+    <text x="60" y="106" class="label body">[1] First 8 bytes: header length</text>
+    <text x="60" y="126" class="label muted small mono">little-endian uint64 -> "the JSON header is 154 KB"</text>
+  </g>
+
+  <path d="M340 146 L340 166" stroke="#5f5e5a" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="40" y="170" width="600" height="190" rx="8" class="box-purple" stroke-width="1"/>
+    <text x="60" y="194" class="label body code-purple">[2] JSON header: tensor name -> dtype, shape, byte offsets</text>
+
+    <rect x="60" y="208" width="560" height="62" rx="6" class="box-purple" stroke-width="0.8"/>
+    <text x="76" y="229" class="label small mono code-purple">"model.embed_tokens.weight":</text>
+    <text x="96" y="247" class="label small mono code-purple">{ "dtype":"BF16", "shape":[49152,576],</text>
+    <text x="96" y="263" class="label small mono code-purple">  "data_offsets":[0,56623104] }</text>
+
+    <rect x="60" y="282" width="560" height="62" rx="6" class="box-purple" stroke-width="0.8"/>
+    <text x="76" y="303" class="label small mono code-purple">"model.layers.0.self_attn.q_proj.weight":</text>
+    <text x="96" y="321" class="label small mono code-purple">{ "dtype":"BF16", "shape":[576,576],</text>
+    <text x="96" y="337" class="label small mono code-purple">  "data_offsets":[56623104,57286656] }</text>
+  </g>
+
+  <path d="M340 364 L340 384" stroke="#5f5e5a" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="40" y="388" width="600" height="118" rx="8" class="box-green" stroke-width="1"/>
+    <text x="60" y="412" class="label body code-green">[3] Raw tensor bytes: one contiguous data block</text>
+
+    <rect x="60" y="430" width="176" height="52" rx="6" class="box-green" stroke-width="0.8"/>
+    <text x="148" y="452" text-anchor="middle" class="label small mono code-green">embed_tokens</text>
+    <text x="148" y="470" text-anchor="middle" class="label small mono code-green">bytes 0..56.6M</text>
+
+    <rect x="252" y="430" width="176" height="52" rx="6" class="box-green" stroke-width="0.8"/>
+    <text x="340" y="452" text-anchor="middle" class="label small mono code-green">q_proj</text>
+    <text x="340" y="470" text-anchor="middle" class="label small mono code-green">bytes 56.6M..57.3M</text>
+
+    <rect x="444" y="430" width="176" height="52" rx="6" class="box-green" stroke-width="0.8"/>
+    <text x="532" y="452" text-anchor="middle" class="label small mono code-green">remaining tensors</text>
+    <text x="532" y="470" text-anchor="middle" class="label small mono code-green">bytes 57.3M..EOF</text>
+  </g>
+
+  <g>
+    <rect x="40" y="526" width="600" height="38" rx="8" class="box-note" stroke-width="1"/>
+    <text x="60" y="548" class="label body" fill="#6f4b00">
+      To read a tensor: look up its header entry, then slice raw bytes from start offset to end offset.
+    </text>
+  </g>
+</svg>
