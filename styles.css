@@ -223,6 +223,54 @@ p strong {
 }
 
 /* ============================
+   THE STACK
+   ============================ */
+.stack {
+    padding: 56px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.stack-layers {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stack-layer {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 18px 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.stack-layer:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--border-color-strong);
+}
+
+.stack-layer-name {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.stack-layer-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+/* ============================
    WRITING
    ============================ */
 .writing {
@@ -564,10 +612,17 @@ p strong {
     }
 
     .pillars,
+    .stack,
     .writing,
     .products,
     .background {
         padding: 44px 0;
+    }
+
+    .stack-layer {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 16px 18px;
     }
 
     .writing-header {
