@@ -33,7 +33,7 @@
             </div>
             <div class="hero-text">
                 <h1 id="hero-name">Lyubomir Stoykov</h1>
-                <p class="hero-sub">Previously Staff Engineer at <strong>Yelp</strong>.<br>Now: explaining LLMs through videos, courses, and open-source tools - and helping companies run LLMs in production.</p>
+                <p class="hero-sub">Previously Staff Engineer at <strong>Yelp</strong> (<a href="#timeline" class="inline-link">full timeline</a>).<br>Now: explaining LLMs through videos, courses, and open-source tools - and helping companies run LLMs in production.</p>
                 <div class="social-links" aria-label="Social links">
                     <a href="/blogs/" class="link-btn">Blog &rarr;</a>
                     <a href="https://www.youtube.com/@lustoykov" class="link-btn" target="_blank" rel="noopener">YouTube &rarr;</a>
@@ -62,7 +62,7 @@
                 <article class="pillar">
                     <p class="pillar-num">03</p>
                     <h3>Consult</h3>
-                    <p>Working with a few selected clients where interests align: LLM system audits, evals and observability, fine-tuning decisions, inference cost and latency, team training. <a href="mailto:lustoykov.ai@gmail.com" class="inline-link">Get in touch &rarr;</a></p>
+                    <p>Helping companies run LLMs in production: audits, evals, fine-tuning, inference cost, team training. <a href="mailto:lustoykov.ai@gmail.com" class="inline-link">Get in touch &rarr;</a></p>
                 </article>
             </div>
         </section>
@@ -89,7 +89,7 @@
             <h2 id="about-label" class="section-label">About me</h2>
             <p class="background-prose">I grew up in Bulgaria, left home at 14 for a math high school, and moved to Germany at 19. I studied Computer Science at <strong>TU Munich</strong> and graduated with M.Sc (Distinction). After that I joined <strong>Yelp</strong> in Hamburg and worked on Ads for six years, going from Software Engineer to Staff Software Engineer. I took a sabbatical in mid&#8209;2025, moved back to Bulgaria, and started working independently in 2026.</p>
 
-            <details class="timeline-details">
+            <details class="timeline-details" id="timeline">
                 <summary class="timeline-toggle">Full timeline</summary>
                 <ol class="timeline">
                     <li class="timeline-item">
@@ -102,7 +102,7 @@
                     <li class="timeline-item">
                         <span class="timeline-when">2025 &ndash; 2026</span>
                         <div class="timeline-what">
-                            <p class="timeline-role">Sabbatical</p>
+                            <p class="timeline-role">6-month Sabbatical</p>
                             <p class="timeline-org">Moved back to Bulgaria</p>
                         </div>
                     </li>
@@ -110,7 +110,7 @@
                         <span class="timeline-when">2024 &ndash; 2025</span>
                         <div class="timeline-what">
                             <p class="timeline-role">Staff Software Engineer</p>
-                            <p class="timeline-org">Yelp &middot; Ads &middot; Hamburg</p>
+                            <p class="timeline-org">Yelp &middot; Ads &middot; Hamburg / Munich</p>
                         </div>
                     </li>
                     <li class="timeline-item">
@@ -157,6 +157,26 @@
         </footer>
 
     </main>
+
+    <script>
+        // Open the collapsed timeline when linked via #timeline
+        (function () {
+            function openTimeline() {
+                if (location.hash === '#timeline') {
+                    var d = document.getElementById('timeline');
+                    if (d) d.open = true;
+                }
+            }
+            document.querySelectorAll('a[href="#timeline"]').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    var d = document.getElementById('timeline');
+                    if (d) d.open = true;
+                });
+            });
+            window.addEventListener('hashchange', openTimeline);
+            openTimeline();
+        })();
+    </script>
 
 </body>
 
