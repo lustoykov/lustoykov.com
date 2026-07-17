@@ -369,5 +369,4 @@ With that — thanks a lot for reading, and see you next time.
 
 ---
 
-*Diagrams from the video: [tldraw board](https://www.tldraw.com/f/V69Jfx2YvBI2695P68X3a?d=v25.-386.2301.1230.page)*
 *The proxy/trace viewer: [claude-tap](https://github.com/liaohch3/claude-tap)*
