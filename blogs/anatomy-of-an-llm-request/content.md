@@ -1,8 +1,6 @@
 # The Anatomy of an LLM Request
 
-*What actually gets sent to an LLM: system prompts, tools, MCP, memory, skills, messages, caching, and the complete tool-use loop.*
-
-*This is the written version of my video "The Anatomy of an LLM Request" — [watch it here](https://www.youtube.com/watch?v=AxdGI_P11qM&t=1s). Same content, adjusted for reading.*
+*This is the written version of my video "The Anatomy of an LLM Request".*
 
 In this post we're going to break down the anatomy of an LLM request, and understand exactly what happens under the hood when you send a message to your favorite LLM provider — Anthropic, OpenAI, or someone else. 
 We'll look at the lifecycle of how a very simple message travels to the LLM, all of its building blocks — tools, system prompt, messages and revisit how LLM's Cache works.
