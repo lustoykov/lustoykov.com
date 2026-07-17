@@ -113,6 +113,31 @@
         return title;
     };
 
+    const buildVideoEmbed = (article) => {
+        const videoId = article.dataset.articleVideo;
+        const header = article.querySelector(".article-header");
+        if (!videoId || !header) {
+            return;
+        }
+
+        const start = article.dataset.articleVideoStart;
+        const src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}${start ? `?start=${encodeURIComponent(start)}` : ""}`;
+
+        const figure = document.createElement("figure");
+        figure.className = "article-video";
+
+        const iframe = document.createElement("iframe");
+        iframe.src = src;
+        iframe.title = article.dataset.articleVideoTitle || "Embedded YouTube video";
+        iframe.loading = "lazy";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+        figure.appendChild(iframe);
+        header.after(figure);
+    };
+
     const setExternalLinks = (root) => {
         root.querySelectorAll("a[href]").forEach((link) => {
             const href = link.getAttribute("href");
@@ -166,6 +191,7 @@
         article.innerHTML = window.DOMPurify.sanitize(md.render(markdown));
 
         const title = buildArticleHeader(article);
+        buildVideoEmbed(article);
         addHeadingAnchors(article);
         wrapTables(article);
         wrapImages(article);
